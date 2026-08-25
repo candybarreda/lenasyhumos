@@ -14,7 +14,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
+import { getDishImage } from "../../utils/imageUtils";
 import { useCart } from "../../context/CartContext";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -297,20 +297,15 @@ Total: S/ ${cartTotal.toFixed(2)}
                   {/* IMAGEN */}
 
                   <Box
-                    component="img"
-                    src={item.image}
-                    alt={item.name}
-                    sx={{
-                      width: 75,
-
-                      height: 75,
-
-                      borderRadius: 2,
-
-                      objectFit: "cover",
-
-                      flexShrink: 0,
-                    }}
+                     component="img"
+                     src={getDishImage(item.image)}
+                     alt={item.name}
+                     sx={{
+                       width: 80,
+                       height: 80,
+                       objectFit: "cover",
+                       borderRadius: 2,
+                     }}
                   />
 
                   {/* INFORMACIÓN */}

@@ -15,32 +15,14 @@ import {
 
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 import { useCart } from "../../context/CartContext";
 
+import { getDishImage } from "../../utils/imageUtils";
 // =====================================
 // IMÁGENES LOCALES
 // =====================================
 
-const images = import.meta.glob(
-  "../../assets/images/*",
-  {
-    eager: true,
-    query: "?url",
-    import: "default",
-  }
-);
-
-const getDishImage = (imageName) => {
-  if (!imageName) return "";
-
-  const imagePath = Object.keys(images).find((path) =>
-    path.toLowerCase().includes(
-      `${imageName.toLowerCase()}.`
-    )
-  );
-
-  return imagePath ? images[imagePath] : "";
-};
 
 // =====================================
 // DISH CARD
@@ -108,16 +90,16 @@ const DishCard = ({ dish }) => {
           }}
         >
           <CardMedia
-              component="img"
-              image={getDishImage(dish.image)}
-              alt={dish.name}
-              sx={{
-                height: 280,
-                width: "100%",
-                objectFit: "cover",
-                transition: "transform 0.5s ease",
-              }}
-            />
+            component="img"
+            image={getDishImage(dish.image)}
+            alt={dish.name}
+            sx={{
+              height: 280,
+              width: "100%",
+              objectFit: "cover",
+              transition: "transform 0.5s ease",
+            }}
+          />
 
           {/* =====================================
               PRECIO
