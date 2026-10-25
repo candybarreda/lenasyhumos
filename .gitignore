@@ -30,3 +30,7 @@ dist/
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Cobertura y copias de seguridad locales
+/coverage/
+*.bak
