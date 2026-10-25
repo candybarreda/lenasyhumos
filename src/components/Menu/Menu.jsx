@@ -158,11 +158,23 @@ const Menu = () => {
           </Stack>
         )}
 
-        {!loading && error && (
-          <Alert severity="error" sx={{ mb: 4 }}>
-            {error}
-          </Alert>
-        )}
+          {!loading && error && (
+            <Alert
+              severity="error"
+              sx={{ mb: 4 }}
+              action={
+                <Button
+                  color="inherit"
+                  size="small"
+                  onClick={() => window.location.reload()}
+                >
+                  Reintentar
+                </Button>
+              }
+            >
+              {error}
+            </Alert>
+          )}
 
         {!loading && !error && (
           <>

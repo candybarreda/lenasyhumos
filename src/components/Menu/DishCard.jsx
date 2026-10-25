@@ -122,7 +122,7 @@ const DishCard = ({ dish }) => {
                 fontSize: "1rem",
               }}
             >
-              S/ {dish.price}
+              S/ {Number(dish.price).toFixed(2)}
             </Typography>
           </Box>
         </Box>
