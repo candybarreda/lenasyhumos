@@ -26,3 +26,7 @@ dist/
 *.njsproj
 *.sln
 *.sw?
+# Resultados de pruebas automatizadas
+/test-results/
+/playwright-report/
+/playwright/.cache/
