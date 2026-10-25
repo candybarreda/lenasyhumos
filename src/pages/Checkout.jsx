@@ -19,7 +19,7 @@ import { useCart } from "../context/CartContext";
 import { useEffect} from "react";
 import { obtenerZonasDelivery } from "../services/zonaDeliveryService";
 const API_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:8080";
+  import.meta.env.APP_API_URL || "http://localhost:8080";
 
 export default function Checkout() {
   const { cart, cartTotal, clearCart } = useCart();
