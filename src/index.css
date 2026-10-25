@@ -1,0 +1,38 @@
+
+/* Estilos globales de accesibilidad para Leñas y Humos */
+
+:root {
+  --font-scale: 1;
+}
+
+/* Permite que las medidas basadas en rem se adapten al tamaño elegido */
+html {
+  font-size: calc(100% * var(--font-scale, 1));
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+/* Mejora la visibilidad al navegar con teclado */
+
+/* Indicador visible al navegar con teclado */
+:focus-visible {
+  outline: 3px solid #ff9800;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+
+/* Evita animaciones de desplazamiento si el usuario las reduce */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

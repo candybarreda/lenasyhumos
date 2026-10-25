@@ -35,12 +35,7 @@ const DishCard = ({ dish }) => {
     useState(false);
 
     const handleAddToCart = () => {
-      const dishWithImage = {
-        ...dish,
-        image: getDishImage(dish.image),
-      };
-    
-      addToCart(dishWithImage);
+      addToCart(dish);
       setShowNotification(true);
     };
 

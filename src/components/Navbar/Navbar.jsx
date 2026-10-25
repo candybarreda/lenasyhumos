@@ -15,10 +15,11 @@ import {
   Switch,
   Container,
   Badge,
+  Tooltip,
 } from "@mui/material";
 
 import { useTheme } from "../../context/ThemeContext";
-
+import { useAccessibility } from "../../context/AccessibilityContext";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
@@ -38,7 +39,12 @@ export default function Navbar() {
   const [scroll, setScroll] = useState(false);
 
   const { mode, toggleTheme } = useTheme();
-
+  const {
+    fontScale,
+    decreaseFont,
+    increaseFont,
+    resetFont,
+  } = useAccessibility();
   // Carrito
   const [cartOpen, setCartOpen] = useState(false);
   const { cartCount } = useCart();
@@ -131,6 +137,9 @@ export default function Navbar() {
                 checked={mode === "dark"}
                 onChange={toggleTheme}
               />
+              
+                {/* Controles de tamaño de texto */}
+               
 
               {/* Carrito */}
               <IconButton
@@ -272,6 +281,9 @@ export default function Navbar() {
                   primary="Modo oscuro"
                 />
               </ListItem>
+              
+                {/* Accesibilidad: tamaño del texto */}
+                /
 
               {/* Carrito móvil */}
               <ListItem>
